@@ -55,7 +55,7 @@ namespace BoardGamingApi
                 c.PreSerializeFilters.Add((swaggerDoc, httpReq) => {
                     swaggerDoc.Host = httpReq.Host.Value;
                     swaggerDoc.Schemes = new List<string>() { httpReq.Scheme };
-                    swaggerDoc.BasePath = httpReq.PathBase;
+                    swaggerDoc.BasePath = "/" + httpReq.PathBase;
                 });
             });
 
