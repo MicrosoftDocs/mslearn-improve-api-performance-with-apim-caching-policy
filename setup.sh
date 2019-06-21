@@ -68,7 +68,7 @@ printf "Setup complete!\n\n"
 
 printf "***********************    IMPORTANT INFO  *********************\n\n"
 
-printf "Web API test URL: https://$apiname.azurewebsites.net/api/quotes/usa/chess?height=7&width=6\n"
+printf "Web API test URL: https://$apiappname.azurewebsites.net/api/quotes/usa/chess?height=7&width=6\n"
 
 printf "Swagger URL: https://$apiappname.azurewebsites.net/swagger\n"
 
