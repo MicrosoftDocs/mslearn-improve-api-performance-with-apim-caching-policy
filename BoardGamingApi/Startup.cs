@@ -32,10 +32,6 @@ namespace BoardGamingApi
             {
                 c.SwaggerDoc("v1", new Info { Title = "Board Gaming API", Version = "v1" });
             });
-
-            // Configure Swagger to use the xml documentation file
-            var xmlFile = Path.ChangeExtension(typeof(Startup).Assembly.Location, ".xml");
-            c.IncludeXmlComments(xmlFile);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
