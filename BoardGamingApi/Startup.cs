@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -51,7 +52,11 @@ namespace BoardGamingApi
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger(c =>
             {
-                c.PreSerializeFilters.Add((swaggerDoc, httpReq) => swaggerDoc.Host = httpReq.Host.Value);
+                c.PreSerializeFilters.Add((swaggerDoc, httpReq) => {
+                    swaggerDoc.Host = httpReq.Host.Value;
+                    swaggerDoc.Schemes = new List<string>() { httpReq.Scheme };
+                    swaggerDoc.BasePath = "/" + httpReq.PathBase;
+                });
             });
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
